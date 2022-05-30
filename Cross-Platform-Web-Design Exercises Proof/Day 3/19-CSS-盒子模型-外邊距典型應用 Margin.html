@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>盒子模型-外邊距典型應用 Margin</title>
+    <style>
+        /* 外邊距可以讓塊級盒子水平居中， 但是必須滿足兩個條件：
+        ① 盒子必須指定了寬度（ width）。
+        ② 盒子左右的外邊距都設置為 auto 。 
+        注意： 以下方法是讓塊級元素水平居中， 行內元素或者行內塊元素水平居中給其父元素添加 text-align:center 即可。*/
+        .header {
+            background-color: pink;
+            height: 300px;
+            width: 900px;
+            /* 寫法1 */
+            /* margin-left: auto; */
+            /* margin-right: auto; */
+
+            /* 寫法2 */
+            /* margin:auto; */
+
+            /* 寫法3 */
+            margin: 100px auto;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header"><span>文字</span></div>
+    <div class="header"><img src="icon.png" alt="Icon"></div>
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表格細線邊框 Border-Collapse</title>
+    <style>
+        table {
+            width: 500px;
+            height: 250px;
+        }
+
+        table,
+        td,
+        th {
+            border: 1px solid pink;
+            /* border-collapse: collapse 合拼相鄰的邊框 */
+            border-collapse: collapse;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        th {
+            line-height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <table align="center" cellspacing=0>
+        <thead>
+            <tr>
+                <th>排名</th>
+                <th>關鍵詞</th>
+                <th>趨勢</th>
+                <th>搜索</th>
+                <th>最近7日</th>
+                <th>相關鏈接</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td><img src="icon.png" alt="?"></td>
+                <td>1</td>
+                <td>1</td>
+                <td><a href="#">Forum</a></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>1</td>
+                <td><img src="icon.png" alt="?"></td>
+                <td>1</td>
+                <td>1</td>
+                <td><a href="#">Forum</a></td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td>1</td>
+                <td><img src="icon.png" alt="?"></td>
+                <td>1</td>
+                <td>1</td>
+                <td><a href="#">Forum</a></td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td><img src="icon.png" alt="?"></td>
+                <td>1</td>
+                <td>1</td>
+                <td><a href="#">Forum</a></td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td><img src="icon.png" alt="?"></td>
+                <td>1</td>
+                <td>1</td>
+                <td><a href="#">Forum</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+
+</html>

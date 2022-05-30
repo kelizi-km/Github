@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>background-position方位名詞</title>
+    <style>
+        .bg {
+            width: 300px;
+            height: 300px;
+            background-image: url(images/logo.png);background-repeat:no-repeat;
+            background-color:pink;
+        /*如果指定的兩個值都是方位名詞， 則兩個值前後順序無關， 比如 left top 和 top left 效果一致 */
+            background-position: right center;
+
+        }
+        .bg2 {
+            width: 300px;
+            height: 300px;
+            background-image: url(images/logo.png);background-repeat:no-repeat;
+            background-color:rgb(223, 247, 243);
+        /*如果只指定了一個方位名詞，另一個值省略，則第二個值默認居中對齊*/
+            background-position: right;
+        }
+        .bg3 {
+            width: 300px;
+            height: 300px;
+            background-image: url(images/logo.png);background-repeat:no-repeat;
+            background-color:rgb(218, 240, 211);
+        /**/
+            background-position: top;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="bg"></div>
+    <div class="bg2"></div>
+    <div class="bg3"></div>
+</body>
+</html>

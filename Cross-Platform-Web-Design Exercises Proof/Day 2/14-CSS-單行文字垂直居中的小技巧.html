@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>單行文字垂直居中的小技巧</title>
+    <style>
+        div{
+            width: 200px;
+            height: 40px;
+            /* 單行文字垂直居中的小技巧 */
+            line-height: 40px;
+            text-indent: 2em;
+            background-color: pink;
+
+        }
+    </style>
+</head>
+<body>
+    <p>CSS沒有給我們提供文字垂直居中的代碼. 這里我們可以使用一個小技巧來實現.<br>
+        解決方案: 讓文字的行高等於盒子的高度 就可以讓文字在當前盒子內垂直居中</p>
+
+        <div>我要垂直居中</div>
+</body>
+</html>

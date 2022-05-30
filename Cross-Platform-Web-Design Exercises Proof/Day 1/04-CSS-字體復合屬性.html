@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS-字體復合屬性</title>
+    <style>
+        div {
+            /* font-style: italic;
+            font-weight: 800;
+            font-size: 16px;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
+
+            /* 復合屬性 順序不能掉亂!
+               可以省略不需要的屬性,但必須保留font-size和font-family!
+            
+               font: font-style font-weight font-size font-family 
+            */
+            font: italic 800 16px "Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif"
+        }
+    </style>
+</head>
+<body>
+    <div>這是文字這是文字這是文字這是文字</div>
+</body>
+</html>

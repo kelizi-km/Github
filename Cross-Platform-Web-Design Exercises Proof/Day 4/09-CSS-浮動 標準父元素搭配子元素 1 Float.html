@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浮動 標準父元素搭配子元素Float</title>
+    <style>
+        .box {
+            width: 1200px;
+            height: 460px;
+            background-color: pink;
+            margin: 0 auto;
+        }
+
+        .left {
+            float: left;
+            width: 230px;
+            height: 460px;
+            background-color: purple;
+        }
+
+        .right {
+            float: right;
+            width: 970px;
+            height: 460px;
+            background-color: aqua;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <!-- 為了約束浮動元素位置, 我們網頁佈局一般採取的策略是: -->
+<!-- 先用標準流的父元素排列上下位置, 之後內部子元素採取浮動排列左右位置. 符合網頁佈局第一準側 -->
+      <div class="box">
+          <div class="left"></div>
+          <div class="right"></div>
+      </div>
+    
+</body>
+</html>

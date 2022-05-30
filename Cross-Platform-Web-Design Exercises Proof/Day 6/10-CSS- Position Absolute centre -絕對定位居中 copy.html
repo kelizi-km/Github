@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position Absolute -絕對定位居中</title>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        body {
+            height: 5000px;
+        }
+
+        .box {
+            position: absolute;
+            /* 如何讓絕對定位的盒子於頁面居中 */
+            /* step 1 */
+            left: 50%;
+            /* step 2 */
+                /*margin left -50% of box width */
+            margin-left: -100px ;
+            /* step 3 */
+            top: 50%;
+            /* step 4 */
+                /*margin left -50% of box width */
+            margin-top: -100px;
+
+
+            width: 200px;
+            height: 200px;
+            background-color: aquamarine;
+        }
+
+    </style>
+</head>
+
+<body>
+   
+        <div class="box"></div>
+    
+
+
+</body>
+
+</html>

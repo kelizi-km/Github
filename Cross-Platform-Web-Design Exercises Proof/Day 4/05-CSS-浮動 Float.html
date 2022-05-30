@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浮動 Float</title>
+    <style>
+        .three {
+            width: 150px;
+            height: 200px;
+            background-color: pink;
+            /* display: inline-block; */
+            
+            /* 網頁佈局第一準則： 多個塊級元素縱向排列找#標準流，多個塊級元素橫向排列找#浮動。 */
+            
+            /* float 屬性用於創建浮動框，將其移動到一邊，直到左邊緣或右邊緣觸及包含塊或另一個浮動框的邊緣。 */
+            /* float: left; */
+            /* float: right; */
+            /* float: none; */
+        }
+
+        .left {
+            width: 200px;
+            height: 200px;
+            background-color:darkkhaki;
+            float: left;
+
+        }
+        .right {
+            width: 200px;
+            height: 200px;
+            background-color:darkkhaki;
+            float: right;
+
+        }
+
+
+
+    </style>
+
+</head>
+<body>
+    <div class="three">1</div>
+    <div class="three">2</div>
+    <div class="three">3</div>
+
+    <div class="left">左青龍</div>
+    <div class="right">右白虎</div>
+    
+</body>
+</html>

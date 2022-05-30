@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>清除默認內外邊距</title>
+    <style>
+        /* 網頁元素很多都帶有默認的內外邊距， 而且不同瀏覽器默認的也不一致。因此我們在布局前，首先要清除下網頁元素的內外邊距。 */
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        span {
+            background-color: yellow;
+            margin: 0px 20px;
+        }
+
+    </style>
+</head>
+<body>
+    123
+    <ul>
+        <li>abc</li>
+    </ul>
+    <span>行內元素為了照顧兼容性，盡量只設置左右內外邊距，不要設置上下內外邊距。 但是轉換為塊級和行內塊元素就可以了</span>
+</body>
+</html>

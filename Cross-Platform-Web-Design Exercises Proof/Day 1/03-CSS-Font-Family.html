@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Family Font</title>
+    <style>
+        /* 設定font-family */
+        h2 {
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+        }
+
+        p {
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        /* 設置文字大小 (可以設定body文字大小,但標題不受影響,標題需要單獨設定)*/
+        h2 {font-size: 100px;}
+        body {font-size: 30px;}
+
+        /* 設置文字粗細 */
+        h2 {
+            font-weight: normal ;
+        }
+        .heavyfont {
+            font-weight: 700;
+        }
+
+        /* 設置文字樣式 */
+        p {
+            font-style: italic;
+        }
+        em {
+            font-style: normal;
+        }
+     </style>
+</head>
+<body>
+    <h2>pink的秘密</h2>
+    <p>那一抹眾人中最漂亮的顏色,</p>
+    <p>優雅,淡然,又那麼心中清澈.</p>
+    <p>前端總是伴隨著困難和犯錯,</p>
+    <p>靜心,坦然,<strong>攻剋</strong>一個又一個.</p>
+    <p class="heavyfont">拼死也要剋服它,</p>
+    <p>這是pink的秘密也是老師最終的囑托.</p>
+    <em>原本是斜體,因為用了html的斜體標籤em, 平時很少給文字加斜體,反而要給斜體標籤(em,i)改為不傾斜字體</em>
+</body>
+</html>

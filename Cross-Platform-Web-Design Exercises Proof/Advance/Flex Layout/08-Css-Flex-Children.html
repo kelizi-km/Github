@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Children</title>
+    <style>
+        /* 1)Flex 這個元素佔的份數 */
+        section {
+            display: flex;
+            width: 60%;
+            height: 150px;
+            background-color: white;
+            margin: 0 auto;
+        }
+
+        section div:nth-child(1) {
+            width: 100px;
+            height: 150px;
+            background-color: blueviolet;
+
+            /* flex: 1; */
+        }
+
+        section div:nth-child(2) {
+
+            /* (flex: 1 Take all the left space) */
+            flex: 1;
+
+            background-color: aliceblue;
+            margin: 0 5px;
+        }
+
+        section div:nth-child(3) {
+            width: 100px;
+            height: 150px;
+            background-color: rgb(98, 138, 96);
+
+            /* flex: 1; */
+        }
+
+        /* ......................................................... */
+
+        p {
+            display: flex;
+            width: 60%;
+            height: 150px;
+            background-color: rgb(43, 144, 184);
+            margin: 100px auto;
+        }
+
+        p span {
+            flex: 1;
+            height: 150px;
+            border: 3px solid rgb(150, 107, 172);
+            box-sizing: border-box;
+        }
+
+        body p span:nth-child(2) {
+            flex: 2;
+            height: 150px;
+            border: 3px solid rgb(150, 107, 172);
+            box-sizing: border-box;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <section>
+        <div></div>
+        <div></div>
+        <div></div>
+    </section>
+
+    <p>
+        <span></span>
+        <span></span>
+        <span></span>
+    </p>
+
+
+</body>
+
+</html>

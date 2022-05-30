@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Remain Constant Size after adding padding</title>
+    <style>
+        div:nth-child(1) {
+            /* 加這句話讓盒子變成傳統CS3盒子模型 */
+            box-sizing: content-box;
+
+
+            width: 200px;
+            height: 200px;
+            background-color: cadetblue;
+        }
+    
+        div:nth-child(2) {
+            /* 加這句話讓盒子變成CS3盒子模型, 加padding加border不會變大 */
+            box-sizing: border-box;
+
+            width: 200px;
+            height: 200px;
+            background-color: cadetblue;
+
+            /* 加了padding 和border 共20px */
+            padding: 10px;
+            border: 10px solid rgb(160, 76, 122);
+        }
+    
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transition Exercise</title>
+    <style>
+        .border {
+            width: 200px;
+            height: 15px;
+            border: 1px solid red;
+            border-radius: 5px;
+            padding: 1px;
+        }
+
+        .bloodline {
+            width: 100px;
+            height: 15px;
+            background-color: red;
+            border-radius: 5px;
+            transition: width 1s;
+        }
+
+        .bloodline:hover {
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="border">
+        <div class="bloodline"></div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo-class Selector: Structure 結構偽類選擇器 nth-type of</title>
+    <style>
+        ul {
+            list-style: none;
+        }
+
+
+        ul li:first-of-type {
+            background-color: pink;
+        }
+
+        ul li:last-of-type {
+            background-color: aqua;
+        }
+
+        ul li:nth-of-type(even) {
+            background-color: blue;
+        }
+
+        /* Choosing 1 but 1 is not div!!!So 1 - <p>光頭強</p> wont change!!! */
+        section div:nth-child(1) {
+            background-color: red;
+        }
+        /* Yes! choosing 1st of div(ignoring the p 光頭強! */
+        section div:nth-of-type(1) {
+            background-color: aquamarine;
+        }
+
+
+        ol li {
+            padding-bottom: 10px;
+            
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- 結構偽類選擇器主要根據文檔結構來選擇器元素， 常用於根據父級選擇器里面的子元素 -->
+    <ul>
+        <li>Child1</li>
+        <li>Child2</li>
+        <li>Child3</li>
+        <li>Child4</li>
+        <li>Child5</li>
+        <li>Child6</li>
+        <li>Child7</li>
+        <li>Child8</li>
+    </ul>
+    <section>
+        <p>光頭強</p>
+        <div>熊大</div>
+        <div>熊二</div>
+
+    <ol>
+        <h3 text-align: center>小結</h3>
+        <li>結構偽類選擇器一般用於選擇父級里面的第幾個孩子</li>
+        <li>nth-child 對父元素里面所有孩子排序選擇（序號是固定的） 先找到第n個孩子，然後看看是否和E匹配</li>
+        <li>nth-of-type 對父元素里面指定子元素進行排序選擇。 先去匹配E ，然後再根據E 找第n個孩子</li>
+        <li>關於 nth-child（ n） 我們要知道 n 是從 0 開始計算的，要記住常用的公式</li>
+        <li>如果是無序列表，我們肯定用 nth-child 更多</li>
+        <li>類選擇器、屬性選擇器、偽類選擇器，權重為 10</li>
+    </ol>
+    </section>
+</body>
+
+</html>

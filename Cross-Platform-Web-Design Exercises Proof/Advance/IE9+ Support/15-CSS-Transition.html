@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transition</title>
+    <style>
+        div {
+            width: 200px;
+            height: 100px;
+            background-color: pink;
+            /* transition: 要過渡的屬性 花費時間 運動曲線 何時開始 */
+            /* transition: width 1s ease 0s, height 1s ease 0s; */
+            transition: all 1s ease 0s;
+        }
+
+        div:hover {
+            width: 400px;
+            height: 200px;
+            background-color:crimson;
+            border-radius: 150px;
+        }
+
+        /* 記住過渡的使用口訣： 誰做過渡給誰加 */
+    </style>
+</head>
+
+<body>
+
+    <div></div>
+
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>子元素選擇器</title>
+    <!-- 子元素選擇器（子選擇器） 只能選擇作為某元素的最近一級子元素。簡單理解就是選親兒子元素. -->
+    <style>
+        .nav>a {
+            color: rgb(204, 109, 188);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <a href="#">Level 1</a>
+        <p>
+            <a href="#">Level 2</a>
+        </p>
+    </div>
+</body>
+
+</html>

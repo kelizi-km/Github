@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position order (z-index) - 定位疊放順序</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+        }
+
+        .b1 {
+            background-color: aqua;
+            /* 只有Position Absolute 才有z-index */
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            /* Change the z-index to see what happen */
+            z-index: 1;
+        }
+        .b2 {
+            background-color: blueviolet;
+            /* 只有Position Absolute 才有z-index */
+            position: absolute;
+            top: 30px;
+            left: 40px;
+             /* Change the z-index to see what happen */
+            z-index: 0;
+        }
+        .b3 {
+            background-color: chartreuse;
+            /* 只有Position Absolute 才有z-index */
+            position: absolute;
+            top: 30px;
+            left: 50px;
+             /* Change the z-index to see what happen */
+            z-index: -1;
+        }
+
+
+
+    </style>
+</head>
+
+
+<body>
+    <div class="box b1">1</div>
+    <div class="box b2">2</div>
+    <div class="box b3">3</div>
+
+
+
+
+</body>
+
+</html>

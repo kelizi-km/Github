@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>復合選擇器之後代選擇器</title>'
+    <style>
+        /* Change the color of the li in il only. */
+        ol li {
+            color: crimson;
+        }
+
+        /* Change the color of the a in il in ol only. */
+        ol li a {
+            color: aquamarine;
+        }
+
+        /* Change the color of the a in il in ul only. */
+        ul li a {
+            color: darkslategrey;
+        }
+
+        .nav li a {
+            color: cyan;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+    <ol>
+        <li>Im the son</li>
+        <li>Im the son</li>
+        <li><a href="#">Now</a></li>
+    </ol>
+
+    <ul>
+        <li>Im the daughter</li>
+        <li>Im the daughter</li>
+        <li><a href="#">Quick</a></li>
+    </ul>
+
+    <ul class="nav">
+        <li>Im the daughter</li>
+        <li>Im the daughter</li>
+        <li><a href="#">Quick</a></li>
+    </ul>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Web</title>
+    <style>
+        .container {
+            height: 150px;
+            background-color: aqua;
+            margin: 0 auto;
+        }
+
+        /* 1) Screen = Super Small  < 768px   100%  */
+        @media screen and (max-width:767px) {
+            .container {
+                width: 100%;
+            }
+        }
+        /* 2) Screen = Small 768px-991px         750px*/
+        @media screen and (min-width:768px) {
+            .container {
+                width: 750px
+            }
+        }
+
+        /* 3) Screen = Medium 992px-1199px    970px */
+        @media screen and (min-width:992px) {
+            .container {
+                width: 970px;
+            }
+        }
+
+        /* 3) Screen = Medium 992px-1199px    970px */
+        @media screen and (min-width:1200px) {
+            .container {
+                width: 1170px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!--  Screen = Super Small  < 768px   100%-->
+    <!--  Screen = Small 768px-991px      750px-->
+    <!--  Screen = Medium 992px-1199px    970px-->
+    <!--  Screen = Big 1200px - infinity  1170px-->
+
+    <!-- When developing a Responsive Web, 1st need a container -->
+    <div class="container"></div>
+</body>
+
+</html>

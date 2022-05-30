@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attribute selectors</title>
+    <style>
+        /* 1 */
+        input {
+            background-color: coral;
+            border-radius: 10px;
+        }
+
+        input[value] {
+            color: brown;
+            background-color: aqua;
+            border-radius: 10px;
+        }
+
+        /* 2 */
+        input[type=text] {
+            color: aquamarine;
+            background-color: blue;
+        }
+
+        /* 3 */
+        div[class^=icon] {
+            color: cornflowerblue;
+            font-size: larger;
+        }
+
+        /* 4 */
+        section[class$=data] {
+            color: crimson;
+        }
+
+        /* 5 */
+        footer[class*=Y] {
+            color: darkcyan;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 1 -->
+    <input type="text" value="input name"> -->
+    <input type="text">
+    <hr>
+    <!-- 2 -->
+    <input type="text" name="" id=""> -->
+    <input type="password" name="" id="">
+    <hr>
+    <!-- 3 -->
+    <div class="icon1">logo</div>
+    <div class="icon2">logo</div>
+    <div class="icon3">logo</div>
+    <div class="icon4">logo</div>
+    <div>I am nothing</div>
+    <hr>
+    <!-- 4 -->
+    <section class="icon1-data">icon</section>
+    <section class="icon2-data">icon</section>
+    <section class="icon3-ico">icon</section>
+    <hr>
+    <!-- 5 -->
+    <footer class="banner-apple-Y-1">Footer1</footer>
+    <footer class="banner-funny-Y-1">Footer2</footer>
+    <footer class="banner-busus-Y-1">Footer3</footer>
+    <footer class="banner-Yiofk-B-1">Footer4</footer>
+    <footer class="banner-xiofk-x-1">Footer5</footer>
+
+</body>
+
+</html>

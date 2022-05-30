@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS三大特性之繼承性 inheritance</title>
+    <style>
+        body {
+            color:blueviolet;
+            /* 14px is the font, 1.5 x fontsize here is line height  */
+            font: 12px/1.5 'Microsoft Yahei';
+        }
+        div {
+            /* Here the line height times 1.5 because in the body it state that  */
+            font-size: 30px;
+        }
+        p {
+            /* Here the line height times 1.5 because in the body it state that  */
+            font-size: 20px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div>粉紅色的回憶</div>
+    <p>粉紅色的回憶</p>
+    <p>行高可以跟單位,也可以不跟單位</p>
+    <ul>
+        <li>我沒有指定文字大小</li>
+    </ul>
+</body>
+</html>

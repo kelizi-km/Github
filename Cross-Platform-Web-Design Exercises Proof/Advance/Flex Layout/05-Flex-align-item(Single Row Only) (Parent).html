@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            display: flex;
+
+            width: 800px;
+            height: 400px;
+            background-color: aquamarine;
+
+
+            flex-direction: column;
+            flex-wrap:wrap;
+
+            /* 主軸居中 */
+            justify-content: center;
+
+
+            /* align-items 設置側軸居中 */
+            align-items: center;
+
+            /* 用stretch的話子盒子不要給height */
+            /* align-items: stretch; */
+          
+
+
+        }
+
+        div span {
+            width: 150px;
+            /* height: 100px; */
+            background-color: burlywood;
+            color: blueviolet;
+            margin: 10px;
+            font-size: x-large;
+            text-align: center;
+            line-height: 100px;
+        }
+    </style>
+
+
+
+
+    </style>
+
+
+
+</head>
+<body>
+    <div>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+    </div>
+</body>
+</html>

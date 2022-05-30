@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鏈接偽類選擇器</title>
+
+    <style>
+        /*  */
+        body {
+            color:black
+        }
+
+
+        /*1. 未訪問過的鏈接 a:link*/
+        a:link {
+            color: rgb(238, 81, 81);
+            text-decoration: none;
+        }
+        /*2. 已訪問過的鏈接 a:visited*/
+        a:visited {
+            color: aquamarine;
+        }
+
+        /*3. 鼠標經過的鏈接 a:hover*/
+        a:hover {
+            color:#369 ;
+            text-decoration: underline;
+        }
+        /*4. 鼠標按下的鏈接 a:active*/
+        a:active {
+            color: aliceblue;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <a href="#">Peppa Pig</a>
+    <a href="http://www.ppuiyuh.com.hk">123456789</a>
+
+    <h3>鏈接偽類選擇器注意事項</h3>
+    <ul>
+        <li>1. 為了確保生效， 請按照 LVHA 的循順序聲明 :link－ :visited－ :hover－ :active。</li>
+        <li> 2. 因為 a 鏈接在瀏覽器中具有默認樣式，所以我們實際工作中都需要給鏈接單獨指定樣式。</li>
+        <li>3.實際開發中, 多數用a:link text-decoration 變為none和 a:hover 就夠了,</li>
+    </ul>
+
+</body>
+
+</html>

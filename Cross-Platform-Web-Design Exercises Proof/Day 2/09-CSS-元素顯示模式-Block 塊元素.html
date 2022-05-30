@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>元素顯示模式-塊元素</title>
+    <style>
+        ol li {
+            /* width: 200px; */
+            height: 40px;
+            color:rgb(13, 15, 15)
+        }
+
+    </style>
+
+
+
+</head>
+<body>
+    <h3>常見的塊元素有</h3>
+    <p>h1-h6, p, div, ul, ol, li, div</p>
+    
+    <ol>
+        <li>比較霸道， 自己獨占一行。</li>xxxx
+        <li>高度，寬度、外邊距以及內邊距都可以控制。</li>
+        <li>寬度默認是容器（父級寬度）的100%。</li>
+        <li>是一個容器及盒子， 裡面可以放行內或者塊級元素</li>
+    </ol>
+
+    <h3>注意：</h3>
+    <ol>
+        <li>文字類的元素內不能使用塊級元素</li>
+        <li><p> 標簽主要用於存放文字， 因此 &lt;p&gt; 里面不能放塊級元素， 特別是不能放&lt;div&gt;</li>
+        <li>同理， &lt;h1&gt;~&lt;h6&gt;等都是文字類塊級標簽， 里面也不能放其他塊級元素</li>
+    <p>
+        <div>試試在p裡面放Div,不能這樣哦!</div>
+    </p>
+
+
+    </ol>
+
+
+
+
+
+
+</body>
+</html>

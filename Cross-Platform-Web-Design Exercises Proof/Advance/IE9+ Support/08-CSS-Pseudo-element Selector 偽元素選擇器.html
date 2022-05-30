@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS-Pseudo-element Selector 偽元素選擇器</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: cadetblue;
+        }
+
+        div::before {
+            /* Must write content!!!!! */
+            content: 'Me';
+            display: inline-block;
+            width: 30px;
+            height: 40px;
+            background-color: antiquewhite;
+        }
+        div::after {
+            content: 'You';
+        }
+
+    </style>
+</head>
+<body>
+    <div>Nice!</div>
+    
+
+
+
+
+</body>
+</html>
+
+
+
+<!-- 偽元素選擇器可以幫助我們利用CSS創建新標簽元素，而不需要HTML標簽，從而簡化HTML結構。 -->
+   <!-- - before 和 after 創建一個元素，但是屬於行內元素 -->
+   <!-- - 新創建的這個元素在文檔樹中是找不到的，所以我們稱為偽元素 -->
+   <!-- - 語法： element::before {} -->
+   <!-- - before 和 after 必須有 content 屬性 -->
+   <!-- - before 在父元素內容的前面創建元素， after 在父元素內容的後面插入元素 -->
+   <!-- - 偽元素選擇器和標簽選擇器一樣，權重為  -->

@@ -1,0 +1,106 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?wazkjb');
+  src:  url('fonts/icomoon.eot?wazkjb#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?wazkjb') format('truetype'),
+    url('fonts/icomoon.woff?wazkjb') format('woff'),
+    url('fonts/icomoon.svg?wazkjb#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-gradle:before {
+  content: "\e900";
+}
+.icon-java:before {
+  content: "\e901";
+  color: #007396;
+}
+.icon-jenkins:before {
+  content: "\e902";
+}
+.icon-lgtm:before {
+  content: "\e903";
+  color: #fff;
+}
+.icon-mailchimp:before {
+  content: "\e904";
+  color: #ffe01b;
+}
+.icon-microsoft:before {
+  content: "\e905";
+  color: #666;
+}
+.icon-pagekit:before {
+  content: "\e906";
+}
+.icon-price-tag:before {
+  content: "\e935";
+}
+.icon-location2:before {
+  content: "\e948";
+}
+.icon-aid-kit:before {
+  content: "\e998";
+}
+.icon-meter:before {
+  content: "\e9a6";
+}
+.icon-bookmarks:before {
+  content: "\e9d3";
+}
+.icon-star-half:before {
+  content: "\e9d8";
+}
+.icon-smile:before {
+  content: "\e9e1";
+}
+.icon-wink:before {
+  content: "\e9e7";
+}
+.icon-neutral:before {
+  content: "\e9f7";
+}
+.icon-arrow-up2:before {
+  content: "\ea3a";
+}
+.icon-arrow-right2:before {
+  content: "\ea3c";
+}
+.icon-arrow-down-left2:before {
+  content: "\ea3f";
+}
+.icon-subscript:before {
+  content: "\ea6a";
+}
+.icon-table:before {
+  content: "\ea70";
+}
+.icon-pilcrow:before {
+  content: "\ea73";
+}
+.icon-twitch:before {
+  content: "\ea9f";
+}
+.icon-skype:before {
+  content: "\eac5";
+}
+.icon-css3:before {
+  content: "\eae6";
+}

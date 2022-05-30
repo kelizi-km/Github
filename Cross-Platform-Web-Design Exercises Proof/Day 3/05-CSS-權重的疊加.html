@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>權重的疊加</title>
+    <style>
+        /* 權重li = 0,0,0,1 */
+        li {
+            color: red
+        }
+
+        /*權重疊加了 復合選擇器ul + li = 0,0,0,1+0,0,0,1=0,0,0,2 */
+        ul li {
+            color: green
+        }
+
+        /* 類選擇器(.nav)疊加(li) 權重為0,0,1,0+0,0,0,1 = 0,0,1,1 */
+        .nav li{
+            color:pink
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="nav">
+        <li>豬手</li>
+        <li>豬腳</li>
+        <li>豬尾巴</li>
+        <li>權重會有疊加但不會有進位的問題</li>
+        
+    </ul>
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo-class Selector: Structure 結構偽類選擇器</title>
+    <style>
+        ul, ol {
+            list-style: none;
+        }
+        /* 1) Choose the Child1 in ul li using Structure Pseudo-class selector */
+        /* ul li:first-child {
+            background-color: aqua;
+        }
+        ul li:last-child {
+            background-color: rgba(153, 204, 95, 0.24);
+        }
+        ul li:nth-child(2) {
+            background-color: rgb(255, 251, 0);
+        } */
+
+
+        /* 2) Structure Pseudo-class selector 隔行變色 */
+        ul li:nth-child(odd) {
+            color: pink;
+        }
+
+        ul li:nth-child(even) {
+            color: aqua;
+            background-color: black;
+        }
+
+
+
+        /* 3) Structure Pseudo-class selector 公式 */
+        /* 3.1)nth-child(n)選擇了所有孩子 */
+        ol li:nth-child(n) {
+            background-color: pink;
+        }
+        /* 3.2)nth-child(2n)選擇了所有偶數孩子 = even */
+        ol li:nth-child(2n) {
+            background-color: bisque;
+        }
+        /* 3.3)nth-child(2n)選擇了所有奇數孩子 = odd */
+        ol li:nth-child(2n+1) {
+            background-color: rgb(98, 202, 133);
+        }
+
+        /* 3.3)nth-child(5n)選擇了所有5倍數孩子*/
+        ol li:nth-child(5n) {
+            color: rgb(96, 144, 233);
+        }
+        /* 3.3)nth-child(n+7)選擇了所有0+7的孩子 */
+        ol li:nth-child(n+7) {
+            text-decoration:underline;
+        }
+        /* 3.4)nth-child(-n+5)選擇了所有-0+5的孩子 */
+        ol li:nth-child(-n+5) {
+            font-weight: 800;
+        }
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <!-- 結構偽類選擇器主要根據文檔結構來選擇器元素， 常用於根據父級選擇器里面的子元素 -->
+    <ul>
+        <li>Child1</li>
+        <li>Child2</li>
+        <li>Child3</li>
+        <li>Child4</li>
+        <li>Child5</li>
+        <li>Child6</li>
+        <li>Child7</li>
+        <li>Child8</li>
+    </ul>
+    <ol>
+        <li>Child1</li>
+        <li>Child2</li>
+        <li>Child3</li>
+        <li>Child4</li>
+        <li>Child5</li>
+        <li>Child6</li>
+        <li>Child7</li>
+        <li>Child8</li>
+    </ol>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emmet Abbreviations of HTML and CSS</HTML></title>
+    <style>
+        .one {
+            text-align: center;
+            text-indent: 2em;
+            width: 100px;
+            height: 200px;
+            line-height: 20px;
+        }
+
+
+    </style>
+</head>
+<body>
+<!-- 
+1. 生成標簽 直接輸入標簽名 按tab鍵即可 比如 div 然後tab 鍵， 就可以生成 <div></div> 
+2. 如果想要生成多個相同標簽 加上 * 就可以了 比如 div*3 就可以快速生成3個div
+3. 如果有父子級關系的標簽，可以用 > 比如 ul > li就可以了
+4. 如果有兄弟關系的標簽，用 + 就可以了 比如 div+p
+5. 如果生成帶有類名或者id名字的， 直接寫 .demo 或者 #two tab 鍵就可以了
+6. 如果生成的div 類名是有順序的， 可以用 自增符號 $
+7. 如果想要在生成的標簽內部寫內容可以用 { } 表示-->
+
+
+
+
+<!-- demo$*5 -->
+<div class="demo1"></div>
+<div class="demo2"></div>
+<div class="demo3"></div>
+<div class="demo4"></div>
+<div class="demo5"></div>
+<!-- div{What a nice day}*5 -->
+<div>What a nice day</div>
+<div>What a nice day</div>
+<div>What a nice day</div>
+<div>What a nice day</div>
+<div>What a nice day</div>
+<!-- div{$}*5 -->
+<div>1</div>
+<div>2</div>
+<div>3</div>
+<div>4</div>
+<div>5</div>
+
+
+
+</body>
+</html>

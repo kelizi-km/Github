@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position Absolute -絕對定位</title>
+    <style>
+        .grandfather {
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            width: 800px;
+            height: 800px;
+            background-color: rgb(212, 172, 97);
+        }
+
+        .father {
+            /* father要定位son才會跟father */
+            position: relative;
+            top: 50px;
+            left: 50px;
+            width: 500px;
+            height: 500px;
+            background-color: cadetblue;
+
+        }
+
+        .son {
+            position: absolute;
+            /* top: 10px;
+        left: 10px; */
+            /* top: 100px;
+        right: 100px; */
+            right: 10px;
+            bottom: 10px;
+            width: 200px;
+            height: 200px;
+            background-color: aquamarine;
+        }
+
+        .other {
+            width: 200px;
+            height: 200px;
+            background-color: rgb(255, 237, 75);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grandfather">
+        <div class="father">
+            <div class="son">
+            </div>
+        </div>
+    </div>
+
+    <div class="other"></div>
+
+
+</body>
+
+</html>

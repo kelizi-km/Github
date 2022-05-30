@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D浮動特性3! Float 浮動元素具有行內塊元素特性</title>
+
+    <style>
+        /* 行內元素有了float, 則不需要轉換display:inline-block 就可以直接給高度寬度 */
+        /* span是行內元素, */
+
+        span, 
+        div {
+            float: left;
+            width: 200px;
+            height: 100px;
+            background-color: pink;
+    
+        }
+
+        p {
+            float: right;
+
+            height: 200px;
+            background-color: purple;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <span></span>
+    <span></span>
+    <div>div</div>
+    <p>ttttttttttttttttttttttt</p>
+    
+</body>
+</html>
