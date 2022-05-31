@@ -1,0 +1,327 @@
+-- -----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+DQL Data Query Language 基本查詢
+-- -----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-- --------------------------------
+Simplified Syntex
+-- --------------------------------
+-- ----------
+-select *| (colume name) from (table) where (condition);
+-- ----------
+
+
+
+-- --------------------------------
+-Lets prepare a table with value for us to do query with DQL later
+-- --------------------------------
+create database if not exists mydb2;
+use mydb2;
+
+create table mydb2.product(
+pid int primary key auto_increment,
+pname varchar(20) not null,
+price double,
+category_id varchar(20)
+);
+
+insert into product values(null, 'Hayr Washing Machine', 5000, 'c001');
+insert into product values(null, 'Madi Fridge', 3000, 'c001');
+insert into product values(null, 'Gali Ari-Con', 5000, 'c001');
+insert into product values(null, 'Ninesun Rice Cooker', 5000, 'c001');
+insert into product values(null,'啄木鳥襯衣',300,'c002');
+insert into product values(null,'恒源祥西褲',800,'c002');
+insert into product values(null,'花花公子夾克',440,'c002');
+insert into product values(null,'勁霸休閑褲',266,'c002');
+insert into product values(null,'海瀾之家衛衣',180,'c002');
+insert into product values(null,'傑克瓊斯運動褲',430,'c002');
+insert into product values(null,'蘭蔻面霜',300,'c003');
+insert into product values(null,'雅詩蘭黛精華水',200,'c003');
+insert into product values(null,'香奈兒香水',350,'c003');
+insert into product values(null,'SK-II神仙水',350,'c003');
+insert into product values(null,'資生堂粉底液',180,'c003');
+insert into product values(null,'老北京方便面',56,'c004');
+insert into product values(null,'良品鋪子海帶絲',17,'c004');
+insert into product values(null,'三只松鼠堅果',88,null);
+
+
+-- --------------------------------------------------------------------------------------------------------------------------------
+Basic Query
+-- --------------------------------------------------------------------------------------------------------------------------------
+
+-- ----------------
+Inquire (查詢) all of the product
+-- ----------------
+
+select * from product;
+
+select pid,pname,price,category_id from product;
+
+-- ----------------
+Inquire (查詢) product name and price
+-- ----------------
+select pname, price from product;
+
+-- ----------------
+alias別名查詢 使用的關鍵字是as (as 可以省略) 
+-- ----------------
+
+-- --------
+alias of TABLE - 1
+-- --------
+select * from product as p; -- not the alias of product is p.
+select * from product p; -- You can omit the as, its the same.
+
+
+-- --------
+alias of colume - 2
+-- --------
+select pname as 'productName', price as 'productPrice' from product;
+
+-- --------
+Disctinct 去掉重複值
+-- --------
+select distinct price from product;
+
+(If there are 2 value all same)
+select distinct * from product;
+
+-- --------
+查詢結果是表達式
+-- --------
+select pname, price +10 as new_price from product;
+
+
+
+
+
+-- ----------------------------------------------------------------
+DQL 運算符
+-- ----------------------------------------------------------------
+
+-- --------
+算數運算符
+-- --------
+select 6 + 2;
+select 6 - 2;
+select 6 * 2;
+select 6 / 2;
+select 6 % 4;
+
+將所有商品的價格漲10元
+select pname, price +10 as new_price from product;
+
+將所有商品的價格漲10%元
+select pname, price *1.1 as new_price from product;
+
+
+
+-- --------
+比較運算符
+-- --------
+邏輯運算符
+-- -------- 
+
+                        --    Inquire all information of 'Hayr Washing Machine'
+												select * from product where pname = 'Hayr Washing Machine';
+												--    Inquire the product which price is 800.
+												select * from product where price = 800;
+												--    Inquire the product name which price is not 800.
+												select pname from product where price != 800;
+												select pname from product where price <> 800;
+												select pname from product where not (price= 800); 
+												--    Inquire the product which price is higher than 60.
+												select * from product where price > 60;
+												--    higher and equal
+												select * from product where price >= 60;
+												--    Inquire the product which price is between 200 to 1000.
+												select * from product where price between 200 and 1000;
+												select * from product where price >= 200 and price <= 1000;
+												select * from product where price >= 200 && price <= 1000;
+												
+												--    Inquire the product which price is 200 or 800.
+												select * from product where price in(200,800);
+												select * from product where price = 200 or price = 800;
+												select * from product where price = 200 || price = 800;
+												
+												-- Inquire the product include the word '仙'
+												select * from product where pname like '%仙'; -- add a % here indicate only search product last word is 仙
+												select * from product where pname like '%水%'; -- add a % here indicate  search product has 水( not only middle.)
+												
+												-- Inquire the product include the word '海' in the beginning.
+												select * from product where pname like '海%'; -- add a % here indicate only search product 1st word is 海
+												
+												-- Inquire the product include the word '蔻' in 2nd word.
+											  select * from product where pname like '_蔻%'
+												
+												-- Inquire where category_id is null
+												select * from product where category_id is null; -- use 'is' here
+												
+												-- Inquire where category_id is not null
+												select * from product where category_id is not null;
+												
+												-- Use 'Least ' to find the smallest value
+												select least(10,5,20) as small_number;
+												select least(null,5,20) as small_number; -- null is the smallest
+												-- Use 'greatest ' to find the greatest value
+												select greatest(10,20,300) as greatest_number;
+												
+							
+												
+     
+
+-- ----------------------------------------------------------------
+DQL - order by query - 排序查詢
+-- ----------------------------------------------------------------
+
+-- ------------------
+-- 1) order by price (ascending)
+-- ------------------
+use mydb2
+select * from product order by price;
+select * from product order by price asc;
+
+-- ------------------
+-- 2) order by price (descending)
+-- ------------------
+select * from product order by price desc;
+
+
+-- ------------------
+-- 3) order by price (descending) and catedory_id (descending)
+-- ------------------
+select * from product order by price desc, category_id desc;
+
+-- ------------------
+-- 4) distinct price 去掉price重複值, and order by price (descending)
+-- ------------------
+select distinct price from product order by price desc;
+
+
+
+
+
+
+-- ----------------------------------------------------------------
+DQL -  aggregate function  - 聚合查詢
+-- ----------------------------------------------------------------
+count()
+sum()
+max()
+min()
+avg()
+
+-- ------------------
+-- 1) Query the total number of product
+-- ------------------
+SELECT count(pid) from product;
+SELECT count(*) from product;
+
+
+-- ------------------
+-- 2) Query the number of product that price is greater than 200
+-- ------------------
+select count(pid) from product where price > 200;
+
+-- ------------------
+-- 3) Query the sum of price of product that is in the 'c001' category
+-- ------------------
+select sum(price) from product where category_id = 'c001';
+
+-- ------------------
+-- 4) Query the highest price of product
+-- ------------------
+select max(price) from product;
+
+-- ------------------
+-- 5) Query the lowest price of product
+-- ------------------
+select min(price) from product;
+
+-- ------------------
+-- 6) Query the hightest and lowest price of product
+-- ------------------
+select max(price), min(price) from product;
+
+-- ------------------
+-- 7) Query the hightest and lowest price of product and dive a new name for each query colume
+-- ------------------
+select max(price) max_price, min(price) min_price from product;
+
+-- ------------------
+-- 8) Query the average price of category c002
+-- ------------------
+select avg(price) from product where category_id = 'c002';
+
+
+
+-
+-- --------------------------------------------
+DQL -  aggregate_function NULL  - 聚合查詢 NULL
+-- --------------------------------------------
+
+-- ------------------
+-- aggregate_function just ignore NULL
+-- ------------------
+
+-- create a table to test
+use mydb2;
+create table test_null(
+c1 varchar(20),
+c2 INT 
+);
+
+insert into test_null values('aaa',3);
+insert into test_null values('bbb',3);
+insert into test_null values('ccc',null);
+insert into test_null values('ddd',6);
+
+select count(*), count(1), count(c2) from test_null; -- count(1) is equal to count(*)
+select sum(c2), max(c2), min(c2), avg(c2) from test_null; -- average also ignore null 
+
+-- If you dont want null value then default 0 while creating the table
+use mydb2;
+create table test_null(
+c1 varchar(20),
+c2 INT default 0
+);
+
+
+-- --------------------------------------------
+DQL - GROUP BY  - 分組查詢 GROUP BY        *Important
+-- --------------------------------------------
+
+select count(pid) from product group by category_id; -- this way i can ot see what is their group
+select category_id, count(pid) from product group by category_id; -- this way i can see the category_id
+
+
+-- ------------------
+-- GROUP BY - HAVING
+-- ------------------
+select category_id, count(pid) from product group by category_id having count(pid) > 4;
+select category_id, count(pid) cnt from product group by category_id having cnt > 4;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,359 @@
+-- ----------------------------------------------------------------------------
+-- CONSTRAINT 約束
+-- ----------------------------------------------------------------------------
+      -- Constraint is used when "creating table"
+
+-- --------------------------------------------
+-- Constraint - PRIMARY KEY    (Only one primary in one table.The value can not be null(empty) and cannot repeated), improve the efficiency of inquiring data.
+-- --------------------------------------------
+
+-- -------------------
+-- method 1
+-- -------------------
+use mydb1;
+CREATE table emp1 ( 
+     eid int primary key,  -- Cannot be null, cannot repeat
+		 name VARCHAR(30),
+		 deptID int,
+		 salary double 
+);
+-- -------------------
+-- method 2
+-- -------------------
+use mydb1;
+CREATE table emp2 ( 
+     eid int,  
+		 name VARCHAR(30),
+		 deptID int,
+		 salary double ,
+		 constraint pk1 primary key(eid)  -- constraint pk1 可以省略
+);
+
+-- -------------------
+-- Primary的作用
+-- -------------------
+insert into emp2(eid, name, deptID, salary) values(1001, 'amy', 10, 5000);      -- Sucessful
+insert into emp2(eid, name, deptID, salary) values(1001, 'Kiliy', 20, 5000);    -- Duplicated -> Fail
+insert into emp2(eid, name, deptID, salary) values(null, 'Wongfive', 9, 5000);  -- Null -> Failure
+
+
+
+-- --------------------------------------------
+-- Constraint - Combined primary key (one primary key with more than one attribute)
+-- --------------------------------------------
+use mydb1;
+CREATE table emp3 (
+name varchar(20),
+deptID int,
+salary double,
+
+
+constraint pk2 primary key(name, deptID)
+
+
+);
+
+insert into emp3 values('KK', 10, 5000);
+insert into emp3 values('KK', 11, 5000);
+
+
+-- --------------------------------------------
+-- Create 單列PRIMARY KEY using alter table
+-- --------------------------------------------
+use mydb1;
+CREATE table emp4 (
+eid int,
+name varchar(20),
+deptID int,
+salary double
+
+);
+
+
+alter table emp4 add primary key (sid);
+
+
+-- --------------------------------------------
+-- Create 多列PRIMARY KEY using alter table
+-- --------------------------------------------
+use mydb1;
+CREATE table emp5 (
+eid int,
+name varchar(20),
+deptID int,
+salary double
+
+);
+
+-- -------------------
+-- Create 多列PRIMARY KEY using alter table
+-- -------------------
+alter table emp5 add primary key (name, deptID);
+
+
+-- --------------------------------------------
+-- Delete Primary Key
+-- --------------------------------------------
+alter table emp1 drop primary key;
+
+
+
+-- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- Constraint - auto_increment    
+-- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+               -- Usually use with primary key
+							 -- Only 1 auto_increment in a table
+							 -- Start from 1, auto increment 1 each data input
+							 -- Must be not Null, Must me interger(整數)
+							 -- the largest/smallest value is constrint by the value type.
+							 -- After delete and truncate, the auto increment is different, check your self.
+
+
+-- --------------------------------------------
+-- 1) Set up the auto_increment while creating the table
+-- --------------------------------------------
+create table t_user1 (
+id int primary key auto_increment,
+name varchar(20)
+);
+
+insert into t_user1 (name) value ('Maku');
+insert into t_user1 value (NULL,'Issey');
+
+delete from t_user1;
+truncate table t_user1;
+
+-- --------------------------------------------
+-- 2) Set up the auto_increment when creating the table and specify the initial value
+-- --------------------------------------------
+create table t_user2 (
+id int primary key auto_increment,
+name varchar(20)
+)auto_increment = 100;
+
+insert into t_user2 (name) value ('Maku');
+insert into t_user2 value (NULL,'Issey');
+
+-- -------------------
+-- 3) Set up the initial value of auto increment after creating the table
+-- -------------------
+
+create table t_user3 (
+id int primary key auto_increment,
+name varchar(20)
+);
+
+alter table t_user3 auto_increment = 10000;
+
+insert into t_user3 (name) value ('Maku');
+insert into t_user3 value (NULL,'Issey');
+
+
+
+
+
+
+
+
+
+
+-- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- Constraint - NOT NULL 非空約束
+-- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+															 
+-- -------------------
+-- 1) Set up the NOT NULL constraint while creating the table
+-- -------------------
+create table mydb1.t_user6 (
+id int,
+name varchar(20) not null,
+address varchar(50) not null
+);
+
+insert into t_user6(id) value(1001);   -- ERROR
+insert into t_user6(id, name, address) value(1001, NULL, NULL); -- ERROR
+insert into t_user6(id, name, address) value(1001, 'NULL', 'NULL'); -- Successful
+insert into t_user6(id, name, address) value(1001, '', ''); -- Successful (Empty string)
+
+-- -------------------
+-- 2) Set up the NOT NULL constraint after creating the table
+-- -------------------
+create table mydb1.t_user7 (
+id int,
+name varchar(20) ,
+address varchar(50) 
+);
+
+alter table t_user7 modify name varchar(20) not null;
+alter table t_user7 modify address varchar(50) not null;
+
+
+-- -------------------
+-- 3) Delete the NOT NULL constraint 
+-- -------------------
+
+alter table t_user7 modify name varchar(20);
+alter table t_user7 modify address varchar(50);
+
+
+
+-- -------------------
+-- 4) Check if the colume set to not NULL
+-- -------------------
+desc t_user7
+
+
+
+
+
+
+-- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- Constraint - UNIQUE   (The VALUE CHANGE REPEAT)
+-- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- -------------------
+-- 1) Set up the UNIQUE constraint while creating the table
+-- -------------------
+
+create table mydb1.t_user8 (
+id int,
+name varchar(20),
+phone_number varchar(20) UNIQUE  -- Unique constraint
+);
+
+insert into t_user8 value (1001, 'Takahashi Issey', '24355776');
+insert into t_user8 value (1002, 'Bakabakay', '24355778');
+
+insert into t_user8 value (1003, 'kk', null);
+insert into t_user8 value (1004, 'jkai', null); -- Successful (Null is different from all other value, even itself)
+
+-- -------------------
+-- 2) Set up the UNIQUE constraint after creating the table
+-- -------------------
+
+create table mydb1.t_user9 (
+id int,
+name varchar(20),
+phone_number varchar(20) UNIQUE  -- Unique constraint
+);
+
+
+alter table t_user9 add constraint unique_pn unique(phone_number);
+
+insert into t_user9 value (1001, 'Takahashi Issey', '24355776');
+insert into t_user9 value (1002, 'Bakabakay', '24355776'); -- Failed
+
+
+-- -------------------
+-- 3) Delete the UNIQUE constraint
+-- -------------------
+alter table t_user8 modify phone_number varchar(20);
+alter table t_user9 drop index unique_pn;
+
+
+
+
+
+
+
+
+-- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- Constraint - Default 默認約束
+-- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-- -------------------
+-- 1) Set up the default constraint while creating the table
+-- -------------------
+create table mydb1.t_user10 (
+id int,
+name varchar(20),
+city varchar(20) default 'Tokyo' -- Specify the default value is Tokyo if the value not entered.
+);
+
+insert into t_user10 (id, name) value (1, 'kk', null); -- City is null
+insert into t_user10 (id, name) value (2, 'Martin');-- City is default - tokyo
+insert into t_user10 value (2, 'Martin', 'Adelaide'); -- City is Adelaide
+
+
+-- -------------------
+-- 2) Set up the 'default constraint' after created the table
+-- -------------------
+create table mydb1.t_user11 (
+id int,
+name varchar(20),
+city varchar(20) 
+);
+
+
+alter table t_user11 modify city varchar(20) default 'Tokyo';
+
+insert into t_user11 (id, name ) value (10, 'Yove');
+
+-- -------------------
+-- 3) Delete the 'default constraint'
+-- -------------------
+alter table t_user11 modify city varchar(20);
+alter table t_user11 modify city varchar(20) default null;
+
+
+
+
+
+
+-- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- Constraint - Zerofill 零填充
+-- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+create table t_user12 (
+ id int ZEROFILL, -- Zerofill
+ name varchar(20)
+);
+
+insert into t_user12 value(123,'kk');
+-- -------------------
+-- 3) Delete the 'default constraint'
+-- -------------------
+alter table t_user12 modify id int;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

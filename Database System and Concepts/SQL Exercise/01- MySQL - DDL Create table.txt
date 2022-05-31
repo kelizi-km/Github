@@ -1,0 +1,117 @@
+-- ----------------------------------------------------------------------------------------------
+-- DDL - Data Definition Language
+-- ----------------------------------------------------------------------------------------------
+
+-- -----------------------
+-- Create Database
+-- -----------------------
+
+-- ------
+-- create database if not exists mydb1;
+-- ------
+
+
+use mydb1;
+create table if not EXISTS student (
+  sid int UNSIGNED,
+	name varchar(20),
+	gender varchar(10),
+	age int,
+	birth date,
+	address varchar(20),
+	score double
+);
+
+-- 3) 
+show tables;
+
+-- 4)
+show create table student; 
+
+-- 5) 查看表結構
+desc student;
+
+-- 6) delete TABLE
+drop table student;
+
+-- 7) 修改表結構  
+           -- a) -add colume     
+alter table student add department varchar(30)
+           -- b) Change the name of COLUMN
+alter table student change dept department varchar(30)
+           -- c) Delete COLUMN
+alter table student drop department;
+           -- d) Change table NAME
+rename table stu to student;
+
+
+
+
+
+
+
+
+
+-- ----------------------------------------------------------------------------------------------
+DML Data Manipulation Language
+          -- insert delete update
+-- ----------------------------------------------------------------------------------------------
+					
+-- ---------------
+-- 1)INSERT value
+-- ---------------
+-- a)
+insert into stu (sid, name, gender, age, birth, address, score)
+            value (00003, 'ka', 'Male', 18, '2000-12-23', 'hk', 100),
+						      (00002, 'aa', 'FeMale', 18, '2000-12-23', 'hk', 100);
+									
+insert into stu (sid) value (00004);
+
+-- b)insert all value
+insert into stu value (00006, 'Galina', 'FeMale', 18, '2000-1-23', 'Tokyo', 100),
+                      (00007, 'Gavla', 'Male', 18, '2000-4-23', 'Tokyo', 100);
+											
+											
+-- ---------------											
+-- 2) MODIFY value
+-- ---------------
+-- a) All the value in a colume
+      -- Update (Table) set (Colume Name)= 'Value'
+UPDATE stu set address = 'Tokyo'; 
+-- b) One row one value		
+      -- Update (Table) set (Colume Name)= 'Value' where 'condition'
+UPDATE stu set address = 'Hong Kong' where sid = 00003;
+UPDATE stu set gender = 'Female' where sid >= 00006;					
+UPDATE stu set gender = 'Male', score = 100 where sid = 00006;		
+
+
+-- ---------------
+-- 3) DELETE value
+-- ---------------
+-- a)    delete from (table) where condition;
+delete from stu where sid = 4;
+-- b)    delete all value in the TABLE
+delete from stu;
+-- c) truncate TABLE
+truncate table stu;
+truncate stu
+  
+								
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

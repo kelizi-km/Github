@@ -1,0 +1,4 @@
+"tid"	"name"	"gender"	"age"	"race"	"City"	"pg_id_teacher"
+"3001"	"Mary"	"Female"	"30"		"Ottawa"	"AT_CS01"
+"3002"	"Tom"	"Male"	"40"		"Ottawa"	"AT_mb01"
+"3003"	"Peter"	"Male"	"50"		"Ottawa"	"CST_arch01"

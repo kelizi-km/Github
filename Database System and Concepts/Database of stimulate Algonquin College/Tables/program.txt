@@ -1,0 +1,8 @@
+"pg_id"	"pg_name"	"pg_campus"
+"AT_CS01"	"Computer Programming"	"Perth"
+"AT_mb01"	"Mobile Application Design and Development"	"Ottawa"
+"AT_wd01"	"Web Development and Internet Applications"	"Ottawa"
+"CST_arch01"	"Architectural Technician"	"CDI "
+"CST_AuRo01"	"Automation and Robotics"	"CDI "
+"EAS_BT01"	"Biotechnology - Advanced"	"Perth"
+"Htw_Add01"	"Addictions and Mental Health"	"Ottawa"
